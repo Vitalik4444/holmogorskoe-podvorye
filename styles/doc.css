@@ -17,7 +17,11 @@
   gap: 24px;
   min-height: 76px;
 }
+.doc-header a { display: inline-flex; align-items: center; min-height: 44px; }
 .doc-header img { width: 132px; }
+/* Контакты в блоке реквизитов — самостоятельные цели, им нужна высота 44.
+   Ссылки внутри абзацев не трогаем: для них правило не действует. */
+.doc__facts dd a { display: inline-flex; align-items: center; min-height: 44px; }
 .doc-back { font-size: 15px; text-decoration: none; }
 .doc-back:hover { color: var(--c-brown-text); }
 
@@ -91,3 +95,13 @@
   opacity: 0.75;
 }
 .doc-footer p { margin: 0 0 8px; max-width: none; }
+
+.doc-footer__links {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+}
+.doc-footer__links a { display: inline-flex; align-items: center; min-height: 44px; }

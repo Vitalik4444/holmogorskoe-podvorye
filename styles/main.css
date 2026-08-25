@@ -188,6 +188,21 @@ a { color: inherit; }
   font-weight: 500; text-decoration: none; white-space: nowrap;
 }
 
+/* ============ область нажатия ============
+   Ширины хватает везде, а высоты нет: ссылки и вкладки были 21—42 px
+   при норме 44. Наращиваем область нажатия отступами, внешний вид
+   при этом не меняется. */
+.header__nav a,
+.header__tel { display: inline-flex; align-items: center; min-height: 44px; }
+.header__logo { display: inline-flex; align-items: center; min-height: 44px; }
+.footer li a,
+.footer__docs a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer li { margin-bottom: 2px; }
+.switch__btn { min-height: 44px; }
+.cookie__ok { min-height: 44px; }
+.cookie a { display: inline; }
+.doc-back { display: inline-flex; align-items: center; min-height: 44px; }
+
 /* ============ сцена: вся страница ============
    Одна закреплённая сцена во весь экран. Прокрутка ведёт видео и такты:
    один экран прокрутки — один такт. Ниже сцены только футер. */
