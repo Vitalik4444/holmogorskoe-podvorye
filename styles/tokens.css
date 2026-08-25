@@ -1,0 +1,132 @@
+/* Холмогорское подворье — токены лендинга «Ярмарка выходного дня»
+   Значения зафиксированы брендбуком, стр. 47–52 и 55–58. Менять только вместе с ним. */
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../../assets/fonts/GolosText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../../assets/fonts/GolosText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Mathison — только Regular, только капсом. Веб-лицензия на подтверждении. */
+@font-face {
+  font-family: "Mathison";
+  src: url("../../assets/fonts/Mathison-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* основная палитра — соотношение 40 / 40 / 20 */
+  --c-white: #ffffff;
+  --c-black: #1d1d1b;
+  --c-brown: #c87b3b;          /* крупные плоскости, орнамент, иконки */
+  --c-brown-text: #a2622d;     /* фон под текстом мельче 24 px: 4.86:1 с белым */
+  --c-brown-hover: #8d5527;    /* наведение для --c-brown-text */
+
+  /* фоны */
+  --c-cream: #fff3db;
+  --c-paper: #f9f1d8;
+
+  /* категории товарных рядов (навигационная палитра) */
+  --c-meat: #931b16;
+  --c-fish: #a4bdd1;
+  --c-dairy: #ece1d5;
+  --c-bread: #f3c16d;          /* золотисто-охристый — по брендбуку это хлебобулочные */
+  --c-honey: #caa35d;          /* затемнённая пара; мёда в брендбуке нет, временно */
+  --c-veg: #4f7a22;
+
+  /* шрифты */
+  --f-accent: "Mathison", "Arial Black", sans-serif;
+  --f-text: "Golos Text", -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* типографика */
+  --fs-h1: clamp(2.75rem, 6vw, 5.5rem);
+  --fs-h2: clamp(2rem, 4vw, 3.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-lead: clamp(1.125rem, 1.6vw, 1.25rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.0625rem);
+  --fs-small: 0.875rem;
+
+  /* ритм и сетка */
+  --step: 8px;
+  --container: 1240px;
+  --gutter: 20px;
+  --section-gap: clamp(64px, 8vw, 128px);
+
+  /* прочее */
+  --radius: 4px;
+  --border-soft: 1px solid rgb(29 29 27 / 12%);
+  --border-soft-dark: 1px solid rgb(255 255 255 / 16%);
+
+  /* движение — см. docs/DESIGN.md, раздел 5 */
+  --t-instant: 100ms;
+  --t-fast: 200ms;
+  --t-base: 300ms;
+  --t-enter: 400ms;
+  --t-draw: 600ms;
+
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --e-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* иконки — контурные, штрих 1,5 px, промежуточных размеров нет */
+  --icon-sm: 16px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-stroke: 1.5;
+
+  /* слои */
+  --z-decor: 10;
+  --z-header: 20;
+  --z-float: 30;
+  --z-popover: 40;
+  --z-menu: 100;
+  --z-modal: 1000;
+}
+
+/* Контент должен быть полностью доступен без движения. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 40px; }
+}
+
+@media (min-width: 1280px) {
+  :root { --gutter: 80px; }
+}
+
+/* Тени брендбуком запрещены — переменной для них здесь нет намеренно. */
+
+/* Служебное оформление — см. docs/IDENTITY.md, раздел 8 */
+::selection {
+  background: var(--c-brown);
+  color: var(--c-white);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 96px;
+}

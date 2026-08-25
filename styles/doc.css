@@ -1,0 +1,93 @@
+/* Юридические страницы: светлые, читаемые, без сцены и видео.
+   Общие токены и типографика берутся из main.css. */
+
+.doc-body {
+  background: var(--c-white);
+  color: var(--c-black);
+}
+
+.doc-header {
+  border-bottom: var(--border-soft);
+  background: var(--c-white);
+}
+.doc-header__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+}
+.doc-header img { width: 132px; }
+.doc-back { font-size: 15px; text-decoration: none; }
+.doc-back:hover { color: var(--c-brown-text); }
+
+.doc { padding-block: clamp(48px, 8vh, 96px) clamp(64px, 10vh, 120px); }
+
+.doc__label {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-brown-text);
+  margin: 0 0 16px;
+}
+.doc__title {
+  font-size: clamp(2rem, 4.4vw, 3.75rem);
+  line-height: 0.94;
+  margin: 0 0 16px;
+  max-width: 18ch;
+}
+.doc__meta { font-size: 15px; opacity: 0.6; margin: 0 0 48px; }
+
+.doc h2 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-weight: 500;
+  margin: 48px 0 16px;
+  max-width: 62ch;
+}
+.doc p,
+.doc ul,
+.doc dl { max-width: 68ch; }
+.doc p { margin: 0 0 16px; }
+.doc ul { margin: 0 0 16px; padding-left: 0; list-style: none; }
+.doc li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+/* Ромбовидный маркер — тот же модуль орнамента, что и на главной. */
+.doc li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  background: var(--c-brown);
+  transform: rotate(45deg);
+}
+
+.doc__facts {
+  margin: 24px 0 16px;
+  padding: 24px;
+  border: var(--border-soft);
+  border-radius: var(--radius);
+}
+.doc__facts dt {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.doc__facts dd { margin: 4px 0 16px; }
+.doc__facts dd:last-child { margin-bottom: 0; }
+
+.doc__note {
+  padding: 16px 20px;
+  background: var(--c-cream);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+.doc-footer {
+  border-top: var(--border-soft);
+  padding-block: 32px 40px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+.doc-footer p { margin: 0 0 8px; max-width: none; }

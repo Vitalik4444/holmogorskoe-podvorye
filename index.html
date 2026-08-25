@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Ярмарка выходного дня в Холмогоровке — Холмогорское подворье</title>
+<meta name="description" content="Открытие 28—30 августа. Далее по субботам, воскресеньям и в праздничные дни с 10:00 до 17:00. Мясо, рыба, сыры, мёд, хлеб и овощи от местных хозяйств. пос. Холмогоровка, пер. Садовый, 21. Бесплатная парковка на территории комплекса.">
+<link rel="icon" href="assets/logo/web/mark.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Mathison-Regular.woff2">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/GolosText-Regular.woff2">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!-- Иконки «Холмогорского подворья». Сетка 24×24, только контур, штрих 1,5,
+     срезы прямые, углы кратны 45° — геометрия наследует орнамент.
+     Цвет наследуется от текста через currentColor. -->
+
+<symbol id="i-route" viewBox="0 0 24 24"><path d="M12 3 21 20 12 16 3 20Z"/></symbol>
+
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2 18.5 8.5 12 15 5.5 8.5Z"/><path d="M12 15v7"/></symbol>
+
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l4 2.5"/></symbol>
+
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M3.5 5.5h17v15h-17z"/><path d="M3.5 10.5h17M8 2.5v6M16 2.5v6"/></symbol>
+
+<symbol id="i-parking" viewBox="0 0 24 24"><path d="M3.5 3.5h17v17h-17z"/><path d="M9.5 17.5V7h4l2.5 2.5-2.5 2.5h-4"/></symbol>
+
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 2.5h10v19H7z"/><path d="M10 18.5h4"/></symbol>
+
+<symbol id="i-canopy" viewBox="0 0 24 24"><path d="M2.5 10.5 12 3.5l9.5 7"/><path d="M5.5 10.5v10M18.5 10.5v10M2.5 20.5h19"/></symbol>
+
+<symbol id="i-roof" viewBox="0 0 24 24"><path d="M2.5 11 12 3.5l9.5 7.5v10.5h-19z"/><path d="M9.5 21.5v-6h5v6"/></symbol>
+
+<symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></symbol>
+
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 3.5v17M5 13.5l7 7 7-7"/></symbol>
+
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
+
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></symbol>
+
+</svg>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="header">
+  <div class="wrap wrap--wide header__in">
+    <a class="header__logo" href="#" aria-label="Холмогорское подворье, на главную">
+      <img class="header__logo-dark" src="assets/logo/web/logo-full.png" width="132" height="42" alt="Холмогорское подворье">
+      <img class="header__logo-light" src="assets/logo/web/logo-full-white.png" width="132" height="42" alt="" aria-hidden="true">
+    </a>
+    <nav class="header__nav" aria-label="Разделы">
+      <a href="#about">Подворье</a>
+      <a href="#route">Как добраться</a>
+      <a href="#rows">Товары</a>
+    </nav>
+    <a class="header__tel num" href="tel:+79005611081"><svg class="i i--inline" aria-hidden="true"><use href="#i-phone"></use></svg>+7 900 561-10-81</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Вся история — одна закреплённая сцена. Прокрутка ведёт видео и такты. -->
+  <section class="stage" data-stage>
+    <div class="stage__sticky">
+
+      <div class="stage__media">
+        <picture class="stage__still">
+          <source media="(max-width: 767px)" srcset="assets/render/hero-still-portrait.jpg">
+          <img src="assets/render/hero-still-1600.jpg" width="1600" height="900"
+               alt="Уличные резные ряды Холмогорского подворья" fetchpriority="high">
+        </picture>
+        <picture class="stage__still stage__still--b">
+          <source media="(max-width: 767px)" srcset="assets/render/still-b-portrait.jpg">
+          <img src="assets/render/still-b-1600.jpg" width="1600" height="900"
+               alt="" aria-hidden="true" loading="lazy">
+        </picture>
+        <video class="stage__video" data-video="0" muted playsinline preload="none"
+               poster="assets/video/hero-rows-poster.jpg"
+               data-mp4="assets/video/hero-rows.mp4"
+               data-mp4-sm="assets/video/hero-rows-sm.mp4" aria-hidden="true"></video>
+        <video class="stage__video" data-video="1" muted playsinline preload="none"
+               poster="assets/video/rows-pan-poster.jpg"
+               data-mp4="assets/video/rows-pan.mp4"
+               data-mp4-sm="assets/video/rows-pan-sm.mp4" aria-hidden="true"></video>
+      </div>
+      <div class="stage__scrim" aria-hidden="true"></div>
+
+      <div class="wrap grid beats">
+
+<article class="beat beat--opening col-1-8" data-beat>
+          <p class="label label--light">Холмогорское подворье</p>
+          <h1 class="display beat__title beat__title--hero">Ярмарка<br>выходного<br>дня</h1>
+          <p class="beat__lead beat__lead--hero">Сделано с любовью — проверено временем</p>
+        </article>
+
+        <article class="beat col-1-7" id="about" data-beat>
+          <p class="label label--light">Подворье</p>
+          <p class="display beat__title">Слово<br>из прошлого</p>
+          <p class="beat__lead">Так называли место, куда съезжались с окрестных хуторов и деревень:
+            продать своё, купить чужое, обменяться новостями. Мы вернули ему истинный смысл —
+            здесь торгуют сами производители.</p>
+          <ul class="chips">
+            <li class="chip glass"><b class="num">40</b> хозяйств</li>
+            <li class="chip glass"><b class="num">54</b> торговых места</li>
+            <li class="chip glass"><b class="num">6</b> товарных рядов</li>
+          </ul>
+        </article>
+
+        <article class="beat col-1-8" data-beat>
+          <p class="label label--light">Открытие</p>
+          <p class="display beat__title beat__title--hero num">28 — 30<br>августа</p>
+          <p class="beat__lead">Пятница, суббота, воскресенье, с 10:00 до 17:00.<br>
+            Далее — по субботам, воскресеньям и в праздничные дни.</p>
+        </article>
+
+        <article class="beat col-1-8" id="route" data-beat>
+          <p class="label label--light">Как добраться</p>
+          <p class="display beat__title">пос.&nbsp;Холмогоровка,<br>пер.&nbsp;Садовый,&nbsp;21</p>
+          <p class="beat__lead">Калининградская область.<br>
+            Бесплатная парковка на территории комплекса.</p>
+          <div class="beat__cta">
+            <a class="btn btn--light" href="https://yandex.ru/maps/?rtext=~54.783971,20.414005&amp;rtt=auto" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-route"></use></svg>Построить маршрут</a>
+            <a class="btn btn--ghost num" href="tel:+79005611081"><svg class="i i--inline" aria-hidden="true"><use href="#i-phone"></use></svg>Позвонить</a>
+          </div>
+        </article>
+
+        <article class="beat col-1-9" data-beat>
+          <p class="label label--light">Где искать</p>
+          <p class="display beat__title">Два<br>пространства</p>
+          <div class="duo">
+            <div class="duo__item glass">
+              <svg class="i i--duo" aria-hidden="true"><use href="#i-canopy"></use></svg>
+              <b>Уличные резные ряды</b>
+              <span>Под навесом, на воздухе. Овощи и ягоды, мёд, хлеб, орехи, специи, масло.</span>
+            </div>
+            <div class="duo__item glass">
+              <svg class="i i--duo" aria-hidden="true"><use href="#i-roof"></use></svg>
+              <b>Амбар</b>
+              <span>Крытый зал с холодильными витринами. Молоко и сыры, мясо, рыба. В любую погоду.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="beat col-1-12" id="rows" data-beat>
+          <p class="label label--light">Товары</p>
+          <p class="display beat__title beat__title--sm">Шесть рядов</p>
+          <ul class="tiles">
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#931b16"></span>
+              <b>Мясо и колбасы</b>
+              <span>Говядина, свинина, баранина, домашние колбасы и сало</span>
+            </li>
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#a4bdd1"></span>
+              <b>Рыба</b>
+              <span>Балтийский улов, копчение, рыбные деликатесы</span>
+            </li>
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#ece1d5"></span>
+              <b>Молоко и сыры</b>
+              <span>Творог, сметана, авторские сыры</span>
+            </li>
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#caa35d"></span>
+              <b>Мёд</b>
+              <span>Липовый, гречишный, разнотравье, продукты пчеловодства</span>
+            </li>
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#f3c16d"></span>
+              <b>Хлеб и выпечка</b>
+              <span>Выпечка местных производителей</span>
+            </li>
+            <li class="tile glass">
+              <span class="tile__dot" style="background:#4f7a22"></span>
+              <b>Овощи и фрукты</b>
+              <span>Сезонное с огородов и полей Калининградской области</span>
+            </li>
+          </ul>
+          <p class="beat__note">А также сувениры и ремесленные товары.</p>
+        </article>
+
+        <article class="beat col-1-12" id="map" data-beat>
+          <div class="scheme__head">
+            <div>
+              <p class="label label--light">Карта ярмарки</p>
+              <p class="display beat__title beat__title--sm">Кто где стоит</p>
+            </div>
+            <div class="switch" role="tablist" aria-label="Выбор схемы">
+              <button class="switch__btn is-on" type="button" role="tab" aria-selected="true" data-scheme="street">Уличные ряды</button>
+              <button class="switch__btn" type="button" role="tab" aria-selected="false" data-scheme="barn">Амбар</button>
+            </div>
+          </div>
+
+          <div class="scheme is-on" data-pane="street">
+<svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="40 130 1980 560" class="scheme__svg" role="img">
+<style>
+.scheme__svg .stall{stroke:rgb(255 255 255 / 42%);stroke-width:1.5;}
+.scheme__svg .num{fill:#fff;font-weight:700;font-size:14px;text-anchor:middle;}
+.scheme__svg .nm{fill:#fff;font-size:10.5px;text-anchor:middle;}
+.scheme__svg .leg{fill:#fff;font-size:17px;}
+.scheme__svg .legR{fill:rgb(255 255 255 / 62%);font-size:13px;}
+.scheme__svg .dim{fill:rgb(255 255 255 / 62%);font-size:14px;text-anchor:middle;letter-spacing:0.05em;}
+</style>
+<rect x="58" y="168" width="604" height="198" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5"/>
+<rect x="108" y="242" width="504" height="50" fill="rgb(255 255 255 / 10%)" stroke="rgb(255 255 255 / 55%)" stroke-width="1"/>
+<circle cx="360.0" cy="267.0" r="14" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="1.5"/>
+<text x="360.0" y="272.0" fill="rgb(255 255 255 / 55%)" font-size="15" font-weight="700" text-anchor="middle">1</text>
+<rect class="stall" x="60" y="170" width="48" height="97.0" fill="rgb(255 255 255 / 14%)"/>
+<g transform="rotate(-90 84 218.5)">
+<text class="num" x="84" y="216.5" font-size="11">Я-32</text>
+<text class="nm" x="84" y="229.5" font-size="8.5">резерв</text>
+</g>
+<rect class="stall" x="60" y="267.0" width="48" height="97.0" fill="rgb(255 255 255 / 14%)"/>
+<g transform="rotate(-90 84 315.5)">
+<text class="num" x="84" y="313.5" font-size="11">Я-31</text>
+<text class="nm" x="84" y="326.5" font-size="8.5">резерв</text>
+</g>
+<rect class="stall" x="612" y="170" width="48" height="97.0" fill="#f3c16d"/>
+<g transform="rotate(-90 636 218.5)">
+<text class="num" x="636" y="216.5" font-size="11">Я-22</text>
+<text class="nm" x="636" y="229.5" font-size="8.5">«Русский Хлеб»</text>
+</g>
+<rect class="stall" x="612" y="267.0" width="48" height="97.0" fill="#f3c16d"/>
+<g transform="rotate(-90 636 315.5)">
+<text class="num" x="636" y="313.5" font-size="11">Я-21</text>
+<text class="nm" x="636" y="326.5" font-size="8.5">КФ «Богородская»</text>
+</g>
+<rect class="stall" x="108.0" y="170" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="171.0" y="194">Я-30</text>
+<text class="nm" x="171.0" y="211">резерв</text>
+<rect class="stall" x="234.0" y="170" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="297.0" y="194">Я-28</text>
+<text class="nm" x="297.0" y="211">резерв</text>
+<rect class="stall" x="360.0" y="170" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="423.0" y="194">Я-26</text>
+<text class="nm" x="423.0" y="211">резерв</text>
+<rect class="stall" x="486.0" y="170" width="126.0" height="72" fill="#4f7a22"/>
+<text class="num" x="549.0" y="190">Я-24</text>
+<text class="nm" x="549.0" y="207">ИП Фаталиев,</text>
+<text class="nm" x="549.0" y="220">арбузы</text>
+<rect class="stall" x="108.0" y="292" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="171.0" y="316">Я-29</text>
+<text class="nm" x="171.0" y="333">резерв</text>
+<rect class="stall" x="234.0" y="292" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="297.0" y="316">Я-27</text>
+<text class="nm" x="297.0" y="333">резерв</text>
+<rect class="stall" x="360.0" y="292" width="126.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="423.0" y="316">Я-25</text>
+<text class="nm" x="423.0" y="333">резерв</text>
+<rect class="stall" x="486.0" y="292" width="126.0" height="72" fill="#f3c16d"/>
+<text class="num" x="549.0" y="312">Я-23</text>
+<text class="nm" x="549.0" y="329">«Ковровский</text>
+<text class="nm" x="549.0" y="342">Хлеб»</text>
+<text class="dim" x="360.0" y="396">Ф-1 · 18 000 мм</text>
+<rect x="778" y="168" width="764" height="198" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5"/>
+<rect x="828" y="242" width="664" height="50" fill="rgb(255 255 255 / 10%)" stroke="rgb(255 255 255 / 55%)" stroke-width="1"/>
+<circle cx="1160.0" cy="267.0" r="14" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="1.5"/>
+<text x="1160.0" y="272.0" fill="rgb(255 255 255 / 55%)" font-size="15" font-weight="700" text-anchor="middle">2</text>
+<rect class="stall" x="780" y="170" width="48" height="97.0" fill="#8a6a4e"/>
+<g transform="rotate(-90 804 218.5)">
+<text class="num" x="804" y="216.5" font-size="11">Я-20</text>
+<text class="nm" x="804" y="229.5" font-size="8.5">«МасленДорф»</text>
+</g>
+<rect class="stall" x="780" y="267.0" width="48" height="97.0" fill="#8a6a4e"/>
+<g transform="rotate(-90 804 315.5)">
+<text class="num" x="804" y="313.5" font-size="11">Я-19</text>
+<text class="nm" x="804" y="326.5" font-size="8.5">«Дом Ореха»</text>
+</g>
+<rect class="stall" x="1492" y="170" width="48" height="97.0" fill="#4f7a22"/>
+<g transform="rotate(-90 1516 218.5)">
+<text class="num" x="1516" y="216.5" font-size="11">Я-8</text>
+<text class="nm" x="1516" y="229.5" font-size="8.5">ИП Дрокин</text>
+</g>
+<rect class="stall" x="1492" y="267.0" width="48" height="97.0" fill="#4f7a22"/>
+<g transform="rotate(-90 1516 315.5)">
+<text class="num" x="1516" y="313.5" font-size="11">Я-7</text>
+<text class="nm" x="1516" y="326.5" font-size="8.5">КФХ Серов</text>
+</g>
+<rect class="stall" x="828.0" y="170" width="132.8" height="72" fill="#8a6a4e"/>
+<text class="num" x="894.4" y="194">Я-18</text>
+<text class="nm" x="894.4" y="211">«Дом Ореха»</text>
+<rect class="stall" x="960.8" y="170" width="132.8" height="72" fill="#8b8560"/>
+<text class="num" x="1027.2" y="194">Я-16</text>
+<text class="nm" x="1027.2" y="211">ООО «МКИ»</text>
+<rect class="stall" x="1093.6" y="170" width="132.8" height="72" fill="#caa35d"/>
+<text class="num" x="1160.0" y="194">Я-14</text>
+<text class="nm" x="1160.0" y="211">«Дом Меда»</text>
+<rect class="stall" x="1226.4" y="170" width="132.8" height="72" fill="#caa35d"/>
+<text class="num" x="1292.8000000000002" y="194">Я-12</text>
+<text class="nm" x="1292.8000000000002" y="211">КФХ Свириденко</text>
+<rect class="stall" x="1359.2" y="170" width="132.8" height="72" fill="#4f7a22"/>
+<text class="num" x="1425.6000000000001" y="194">Я-10</text>
+<text class="nm" x="1425.6000000000001" y="211">ЛПХ Цатурян</text>
+<rect class="stall" x="828.0" y="292" width="132.8" height="72" fill="#7a5a6e"/>
+<text class="num" x="894.4" y="312">Я-17</text>
+<text class="nm" x="894.4" y="329">«Хутор Долины</text>
+<text class="nm" x="894.4" y="342">Шарлотты»</text>
+<rect class="stall" x="960.8" y="292" width="132.8" height="72" fill="#a24b3a"/>
+<text class="num" x="1027.2" y="316">Я-15</text>
+<text class="nm" x="1027.2" y="333">ИП Розанов</text>
+<rect class="stall" x="1093.6" y="292" width="132.8" height="72" fill="#caa35d"/>
+<text class="num" x="1160.0" y="312">Я-13</text>
+<text class="nm" x="1160.0" y="329">Виштынецкие</text>
+<text class="nm" x="1160.0" y="342">Дары</text>
+<rect class="stall" x="1226.4" y="292" width="132.8" height="72" fill="#4f7a22"/>
+<text class="num" x="1292.8000000000002" y="316">Я-11</text>
+<text class="nm" x="1292.8000000000002" y="333">ЛПХ Цатурян</text>
+<rect class="stall" x="1359.2" y="292" width="132.8" height="72" fill="#4f7a22"/>
+<text class="num" x="1425.6000000000001" y="316">Я-9</text>
+<text class="nm" x="1425.6000000000001" y="333">«БИОБАЛТ»</text>
+<text class="dim" x="1160.0" y="396">Ф-2 · 22 800 мм</text>
+<rect x="1658" y="168" width="304" height="198" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5"/>
+<rect x="1660" y="242" width="300" height="50" fill="rgb(255 255 255 / 10%)" stroke="rgb(255 255 255 / 55%)" stroke-width="1"/>
+<circle cx="1810.0" cy="267.0" r="14" fill="none" stroke="rgb(255 255 255 / 55%)" stroke-width="1.5"/>
+<text x="1810.0" y="272.0" fill="rgb(255 255 255 / 55%)" font-size="15" font-weight="700" text-anchor="middle">3</text>
+<rect class="stall" x="1660.0" y="170" width="100.0" height="72" fill="#6b8f3a"/>
+<text class="num" x="1710.0" y="194">Я-6</text>
+<text class="nm" x="1710.0" y="211">КФХ Будник</text>
+<rect class="stall" x="1760.0" y="170" width="100.0" height="72" fill="#4f7a22"/>
+<text class="num" x="1810.0" y="194">Я-4</text>
+<text class="nm" x="1810.0" y="211">КФХ Рамазанов</text>
+<rect class="stall" x="1860.0" y="170" width="100.0" height="72" fill="#6b7f92"/>
+<text class="num" x="1910.0" y="194">Я-2</text>
+<text class="nm" x="1910.0" y="211">ИП Пасецкий</text>
+<rect class="stall" x="1660.0" y="292" width="100.0" height="72" fill="#6b8f3a"/>
+<text class="num" x="1710.0" y="316">Я-5</text>
+<text class="nm" x="1710.0" y="333">КФХ Калюжная</text>
+<rect class="stall" x="1760.0" y="292" width="100.0" height="72" fill="#4f7a22"/>
+<text class="num" x="1810.0" y="316">Я-3</text>
+<text class="nm" x="1810.0" y="333">КФХ Рамазанов</text>
+<rect class="stall" x="1860.0" y="292" width="100.0" height="72" fill="rgb(255 255 255 / 14%)"/>
+<text class="num" x="1910.0" y="316">Я-1</text>
+<text class="nm" x="1910.0" y="333">резерв</text>
+<text class="dim" x="1810.0" y="396">Ф-3 · 9 000 мм</text>
+<line x1="60" y1="424" x2="1960" y2="424" stroke="rgb(255 255 255 / 55%)" stroke-width="1"/>
+<text x="60" y="458" fill="rgb(255 255 255 / 55%)" font-size="18" font-weight="700" letter-spacing="0.06em">КАТЕГОРИИ</text>
+<rect x="60" y="474" width="22" height="22" fill="#6b7f92" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="491">Сувениры, изделия из дерева</text>
+<text class="legR" x="94" y="508">Я-2</text>
+<rect x="60" y="524" width="22" height="22" fill="#4f7a22" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="541">Овощи, фрукты, грибы, бахчевые</text>
+<text class="legR" x="94" y="558">Я-3 — Я-4, Я-7 — Я-11, Я-24</text>
+<rect x="60" y="574" width="22" height="22" fill="#6b8f3a" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="591">Ягоды, плодовые</text>
+<text class="legR" x="94" y="608">Я-5 — Я-6</text>
+<rect x="60" y="624" width="22" height="22" fill="#caa35d" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="641">Мёд, продукты пчеловодства</text>
+<text class="legR" x="94" y="658">Я-12 — Я-14</text>
+<rect x="720" y="474" width="22" height="22" fill="#a24b3a" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="754" y="491">Специи</text>
+<text class="legR" x="754" y="508">Я-15</text>
+<rect x="720" y="524" width="22" height="22" fill="#8b8560" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="754" y="541">Макаронные изделия</text>
+<text class="legR" x="754" y="558">Я-16</text>
+<rect x="720" y="574" width="22" height="22" fill="#7a5a6e" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="754" y="591">Нектары, варенье, сиропы, уксусы</text>
+<text class="legR" x="754" y="608">Я-17</text>
+<rect x="720" y="624" width="22" height="22" fill="#8a6a4e" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="754" y="641">Орехи, сухофрукты, мука, масло</text>
+<text class="legR" x="754" y="658">Я-18 — Я-20</text>
+<rect x="1380" y="474" width="22" height="22" fill="#f3c16d" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="1414" y="491">Хлеб и кондитерские изделия</text>
+<text class="legR" x="1414" y="508">Я-21 — Я-23</text>
+<rect x="1380" y="524" width="22" height="22" fill="rgb(255 255 255 / 14%)" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="1414" y="541">Резерв</text>
+<text class="legR" x="1414" y="558">Я-1, Я-25 — Я-32</text>
+</svg>
+          </div>
+          <div class="scheme" data-pane="barn">
+<svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="40 130 1980 870" class="scheme__svg" role="img">
+<style>
+.scheme__svg .stall{stroke:rgb(255 255 255 / 42%);stroke-width:1.5;}
+.scheme__svg .num{fill:#fff;font-weight:700;font-size:12px;text-anchor:middle;}
+.scheme__svg .nm{fill:#fff;font-size:9px;text-anchor:middle;}
+.scheme__svg .zone{fill:#fff;font-size:13px;font-weight:700;text-anchor:middle;letter-spacing:0.08em;}
+.scheme__svg .leg{fill:#fff;font-size:17px;}
+.scheme__svg .legR{fill:rgb(255 255 255 / 62%);font-size:13px;}
+.scheme__svg .door{fill:#fff;font-size:12px;font-weight:700;text-anchor:middle;}
+.scheme__svg .note{fill:rgb(255 255 255 / 62%);font-size:12px;text-anchor:middle;}
+</style>
+<rect x="80" y="200" width="1835" height="10" fill="rgb(255 255 255 / 55%)"/>
+<rect x="80" y="620" width="70" height="10" fill="rgb(255 255 255 / 55%)"/>
+<rect x="215" y="620" width="720" height="10" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1010" y="620" width="645" height="10" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1720" y="620" width="195" height="10" fill="rgb(255 255 255 / 55%)"/>
+<rect x="80" y="200" width="10" height="430" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1905" y="200" width="10" height="140" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1905" y="440" width="10" height="190" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1760" y="210" width="145" height="410" fill="rgb(255 255 255 / 12%)" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5"/>
+<text class="note" x="1832.5" y="400">ЗАГРУЗОЧНАЯ,</text>
+<text class="note" x="1832.5" y="418">ПОДСОБНЫЕ</text>
+<text class="note" x="1832.5" y="436">(фрагмент 3)</text>
+<rect x="90" y="210" width="240" height="120" fill="rgb(255 255 255 / 12%)" stroke="rgb(255 255 255 / 55%)" stroke-width="2"/>
+<text class="note" x="210" y="265">САНУЗЛЫ</text>
+<text class="note" x="210" y="283">(фрагмент 2)</text>
+<rect x="304" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="484" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="664" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="844" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1024" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1204" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1384" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1564" y="346" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="304" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="484" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="664" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="844" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1024" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1204" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1384" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<rect x="1564" y="462" width="12" height="12" fill="rgb(255 255 255 / 55%)"/>
+<text class="door" x="182" y="654">Д-2 · вход</text>
+<path d="M 182 636 L 182 596 M 175 608 L 182 596 L 189 608" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5" fill="none"/>
+<text class="door" x="972" y="654">Д-3 · вход</text>
+<path d="M 972 636 L 972 596 M 965 608 L 972 596 L 979 608" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5" fill="none"/>
+<text class="door" x="1687" y="654">Д-2 · вход</text>
+<path d="M 1687 636 L 1687 596 M 1680 608 L 1687 596 L 1694 608" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5" fill="none"/>
+<path d="M 1951 390 L 1885 390 M 1899 383 L 1885 390 L 1899 397" stroke="rgb(255 255 255 / 55%)" stroke-width="2.5" fill="none"/>
+<text class="door" x="1921" y="368">Вр-1 · загрузка</text>
+<text class="note" x="66" y="420" transform="rotate(-90 66 420)">← торговый зал №1</text>
+<rect class="stall" x="340.0" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="404.3" y="235">А-1</text>
+<text class="nm" x="404.3" y="251">Экоферма</text>
+<text class="nm" x="404.3" y="262">«Козья Горка»</text>
+<rect class="stall" x="468.6" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="533.0" y="241">А-2</text>
+<text class="nm" x="533.0" y="257">КФХ Филиппова</text>
+<rect class="stall" x="597.3" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="661.6" y="241">А-3</text>
+<text class="nm" x="661.6" y="257">КФХ Изотовы</text>
+<rect class="stall" x="725.9" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="790.2" y="241">А-4</text>
+<text class="nm" x="790.2" y="257">ИП Вольный</text>
+<rect class="stall" x="854.5" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="918.9" y="235">А-5</text>
+<text class="nm" x="918.9" y="251">«Залесский</text>
+<text class="nm" x="918.9" y="262">Фермер»</text>
+<rect class="stall" x="983.2" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1047.5" y="241">А-6</text>
+<text class="nm" x="1047.5" y="257">«ГусевМолоко»</text>
+<rect class="stall" x="1111.8" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1176.1" y="235">А-7</text>
+<text class="nm" x="1176.1" y="251">Сыроварня</text>
+<text class="nm" x="1176.1" y="262">«Чизариум»</text>
+<rect class="stall" x="1240.5" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1304.8" y="241">А-8</text>
+<text class="nm" x="1304.8" y="257">«Мастер Сыр»</text>
+<rect class="stall" x="1369.1" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1433.4" y="241">А-9</text>
+<text class="nm" x="1433.4" y="257">КФХ Заец</text>
+<rect class="stall" x="1497.7" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1562.0" y="241">А-10</text>
+<text class="nm" x="1562.0" y="257">ИП Енгель</text>
+<rect class="stall" x="1626.4" y="214" width="128.6" height="62" fill="#a4bdd1"/>
+<text class="num" x="1690.7" y="235">А-11</text>
+<text class="nm" x="1690.7" y="251">«Неманские</text>
+<text class="nm" x="1690.7" y="262">Сады»</text>
+<rect class="stall" x="225.0" y="554" width="141.0" height="62" fill="#931b16"/>
+<text class="num" x="295.5" y="581">А-12</text>
+<text class="nm" x="295.5" y="597">МК «Залесье»</text>
+<rect class="stall" x="366.0" y="554" width="141.0" height="62" fill="#931b16"/>
+<text class="num" x="436.5" y="575">А-13</text>
+<text class="nm" x="436.5" y="591">Ферма</text>
+<text class="nm" x="436.5" y="602">«Муромская»</text>
+<rect class="stall" x="507.0" y="554" width="141.0" height="62" fill="#931b16"/>
+<text class="num" x="577.5" y="581">А-14</text>
+<text class="nm" x="577.5" y="597">ИП Гапяк</text>
+<rect class="stall" x="648.0" y="554" width="141.0" height="62" fill="#931b16"/>
+<text class="num" x="718.5" y="581">А-15</text>
+<text class="nm" x="718.5" y="597">ИП Полозов</text>
+<rect class="stall" x="789.0" y="554" width="141.0" height="62" fill="#931b16"/>
+<text class="num" x="859.5" y="581">А-16</text>
+<text class="nm" x="859.5" y="597">ИП Фомин</text>
+<rect class="stall" x="1020.0" y="554" width="105.0" height="62" fill="#b02a24"/>
+<text class="num" x="1072.5" y="581">А-17</text>
+<text class="nm" x="1072.5" y="597">ИП Сокулина</text>
+<rect class="stall" x="1125.0" y="554" width="105.0" height="62" fill="#5b8fa8"/>
+<text class="num" x="1177.5" y="581">А-18</text>
+<text class="nm" x="1177.5" y="597">ИП Кузьменко</text>
+<rect class="stall" x="1230.0" y="554" width="105.0" height="62" fill="#5b8fa8"/>
+<text class="num" x="1282.5" y="575">А-19</text>
+<text class="nm" x="1282.5" y="591">ИП</text>
+<text class="nm" x="1282.5" y="602">Мартынцовы</text>
+<rect class="stall" x="1335.0" y="554" width="105.0" height="62" fill="#5b8fa8"/>
+<text class="num" x="1387.5" y="575">А-20</text>
+<text class="nm" x="1387.5" y="591">ИП</text>
+<text class="nm" x="1387.5" y="602">Ковалевская</text>
+<rect class="stall" x="1440.0" y="554" width="105.0" height="62" fill="#5b8fa8"/>
+<text class="num" x="1492.5" y="575">А-21</text>
+<text class="nm" x="1492.5" y="591">ИП</text>
+<text class="nm" x="1492.5" y="602">Ковалевская</text>
+<rect class="stall" x="1545.0" y="554" width="105.0" height="62" fill="#5b8fa8"/>
+<text class="num" x="1597.5" y="581">А-22</text>
+<text class="nm" x="1597.5" y="597">ИП Фомин</text>
+<text class="zone" x="1050" y="188">МОЛОЧНАЯ ПРОДУКЦИЯ</text>
+<text class="zone" x="578" y="712">МЯСО-КОЛБАСНЫЕ ИЗДЕЛИЯ</text>
+<text class="zone" x="1335" y="712">СВЕЖЕЕ МЯСО · РЫБНАЯ ПРОДУКЦИЯ</text>
+<line x1="60" y1="762" x2="1960" y2="762" stroke="rgb(255 255 255 / 55%)" stroke-width="1"/>
+<text x="60" y="798" fill="rgb(255 255 255 / 55%)" font-size="18" font-weight="700" letter-spacing="0.06em">ЗОНЫ</text>
+<rect x="60" y="822" width="22" height="22" fill="#a4bdd1" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="839">Молочная продукция, сыры</text>
+<text class="legR" x="94" y="856">А-1 — А-11 · 11 мест · стена Г</text>
+<rect x="60" y="876" width="22" height="22" fill="#931b16" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="94" y="893">Мясо-колбасные изделия, деликатесы</text>
+<text class="legR" x="94" y="910">А-12 — А-16 · 5 мест · юг, левый сегмент</text>
+<rect x="820" y="822" width="22" height="22" fill="#b02a24" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="854" y="839">Свежее мясо</text>
+<text class="legR" x="854" y="856">А-17 · 1 место · юг, правый сегмент</text>
+<rect x="820" y="876" width="22" height="22" fill="#5b8fa8" stroke="rgb(255 255 255 / 55%)"/>
+<text class="leg" x="854" y="893">Рыба и морепродукты</text>
+<text class="legR" x="854" y="910">А-18 — А-22 · 5 мест · юг, у загрузочной</text>
+<text x="1960" y="798" fill="rgb(255 255 255 / 60%)" font-size="13" text-anchor="end">❄ Каждое место — холодильная витрина · ▪ — колонны каркаса</text>
+</svg>
+          </div>
+        </article>
+
+        <article class="beat col-1-7" id="join" data-beat>
+          <p class="label label--light">Фермерам и мастерам</p>
+          <p class="display beat__title">Торгуйте<br>на ярмарке</p>
+          <p class="beat__lead">Мы ищем хозяйства и мастеров, которые сами делают то, что продают.
+            Расскажем об условиях и покажем свободные места.</p>
+          <div class="beat__cta">
+            <a class="btn btn--light" href="mailto:holmogorskoye@podvorye.com">Написать нам</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="stage__hint" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#i-arrow-down"></use></svg></div>
+      <div class="stage__progress" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap wrap--wide grid">
+    <div class="col-1-5">
+      <img src="assets/logo/web/logo-full-white.png" width="200" height="63" alt="Холмогорское подворье">
+      <p class="footer__slogan">Сделано с любовью — проверено временем</p>
+    </div>
+    <div class="col-7-9">
+      <h3>Ярмарка</h3>
+      <ul>
+        <li><a href="#about">Подворье</a></li>
+        <li><a href="#rows">Товары</a></li>
+        <li><a href="#route">Как добраться</a></li>
+        <li><a href="#join">Фермерам</a></li>
+      </ul>
+    </div>
+    <div class="col-10-12">
+      <h3>Контакты</h3>
+      <ul>
+        <li>пос.&nbsp;Холмогоровка, пер.&nbsp;Садовый, 21</li>
+        <li><a class="num" href="tel:+79005611081">+7 900 561-10-81</a></li>
+        <li><a href="mailto:holmogorskoye@podvorye.com">holmogorskoye@podvorye.com</a></li>
+        <li class="num">СБ&nbsp;— ВС, 10:00&nbsp;— 17:00</li>
+      </ul>
+    </div>
+    <div class="col-1-12 footer__docs">
+      <a href="privacy.html">Политика обработки персональных данных</a>
+      <a href="terms.html">Пользовательское соглашение</a>
+    </div>
+    <div class="col-1-12 footer__legal num">
+      ООО «Аграрная инвестиционная компания» · ИНН 3905053011 · ОГРН 1033901815650<br>
+      238553, Калининградская обл., Зеленоградский р-н, п.&nbsp;Васильково, ул.&nbsp;Парковая, д.&nbsp;22
+    </div>
+  </div>
+</footer>
+
+<a class="btn floater" id="floater" href="https://yandex.ru/maps/?rtext=~54.783971,20.414005&amp;rtt=auto" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-route"></use></svg>Построить маршрут</a>
+
+<div class="cookie" id="cookie" hidden>
+  <span>Мы используем файлы cookie, чтобы понимать, как посетители пользуются сайтом.
+    Подробности — в <a href="privacy.html">политике обработки персональных данных</a>.</span>
+  <button class="cookie__ok" type="button" id="cookie-ok">Понятно</button>
+</div>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
