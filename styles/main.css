@@ -1,4 +1,4 @@
-@import url("tokens.css");
+@import url("tokens.css?v=07ad3186");
 
 /* ============ база ============ */
 *, *::before, *::after { box-sizing: border-box; }
