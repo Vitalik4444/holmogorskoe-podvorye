@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Golos Text";
-  src: url("../../assets/fonts/GolosText-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/GolosText-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Golos Text";
-  src: url("../../assets/fonts/GolosText-Medium.woff2") format("woff2");
+  src: url("../assets/fonts/GolosText-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 /* Mathison — только Regular, только капсом. Веб-лицензия на подтверждении. */
 @font-face {
   font-family: "Mathison";
-  src: url("../../assets/fonts/Mathison-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/Mathison-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

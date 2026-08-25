@@ -97,7 +97,7 @@ a { color: inherit; }
 .orn {
   height: 24px;
   color: var(--c-brown);
-  background-image: url("../../assets/ornament/vertical/orn-v-02.png");
+  background-image: url("../assets/ornament/vertical/orn-v-02.png");
   background-repeat: repeat-x;
   background-size: auto 24px;
 }
