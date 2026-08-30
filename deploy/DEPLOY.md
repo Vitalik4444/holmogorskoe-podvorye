@@ -68,11 +68,11 @@ ssh root@161.104.16.231
 
 git clone https://github.com/Vitalik4444/holmogorskoe-podvorye.git /var/www/podvorye.com
 
-# Папка отдаётся www-data, а git работает от root и на чужой репозиторий ругается
-# «dubious ownership». Без этой строки git pull молча не сработает.
-git config --global --add safe.directory /var/www/podvorye.com
-
-chown -R www-data:www-data /var/www/podvorye.com
+# Владелец root, а не www-data: nginx файлы только читает, и 644/755 это дают.
+# Заодно git, работающий от root, не считает репозиторий чужим — иначе он
+# требует safe.directory, а под systemd (где нет HOME) это исключение
+# не читается и автообновление падает.
+chown -R root:root /var/www/podvorye.com
 find /var/www/podvorye.com -type d -exec chmod 755 {} \;
 find /var/www/podvorye.com -type f -exec chmod 644 {} \;
 ```

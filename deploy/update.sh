@@ -32,7 +32,10 @@ else
 fi
 
 echo "→ права"
-chown -R www-data:www-data "$SITE_DIR"
+# Владелец root, а не www-data: nginx файлы только читает (644/755 это дают),
+# зато git, работающий от root, не считает репозиторий чужим и не требует
+# safe.directory — под systemd, где нет HOME, это исключение всё равно не читается.
+chown -R root:root "$SITE_DIR"
 find "$SITE_DIR" -type d -exec chmod 755 {} \;
 find "$SITE_DIR" -type f -exec chmod 644 {} \;
 
