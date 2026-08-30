@@ -67,6 +67,11 @@ which ispmanager              # не стоит ли панель
 ssh root@161.104.16.231
 
 git clone https://github.com/Vitalik4444/holmogorskoe-podvorye.git /var/www/podvorye.com
+
+# Папка отдаётся www-data, а git работает от root и на чужой репозиторий ругается
+# «dubious ownership». Без этой строки git pull молча не сработает.
+git config --global --add safe.directory /var/www/podvorye.com
+
 chown -R www-data:www-data /var/www/podvorye.com
 find /var/www/podvorye.com -type d -exec chmod 755 {} \;
 find /var/www/podvorye.com -type f -exec chmod 644 {} \;
