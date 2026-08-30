@@ -35,14 +35,21 @@ echo "→ перезагрузка nginx"
 systemctl reload nginx
 
 echo "→ проверка сайта"
-code=$(curl -s -o /dev/null -w "%{http_code}" https://podvorye.com/)
+# Стучимся в свой же nginx, минуя DNS: у сервера чужой кеширующий резолвер,
+# и он может ещё держать старый адрес домена. Путь проверяется тот же самый,
+# боевой, вместе с TLS — подменяется только адрес назначения.
+# `|| true`: при set -e упавший curl оборвал бы скрипт молча, а нам нужен код.
+check() {
+  curl -s -o /dev/null -w "%{http_code}" --resolve "podvorye.com:443:127.0.0.1" "$@" || true
+}
+
+code=$(check https://podvorye.com/)
 echo "  главная: $code"
 
 # Перемотка видео по прокрутке невозможна без частичных запросов,
 # поэтому проверяем их отдельно: молчаливая поломка выглядит как
 # «видео замерло», и причину потом ищут долго.
-range=$(curl -s -o /dev/null -w "%{http_code}" -H "Range: bytes=0-1023" \
-  https://podvorye.com/assets/video/hero-rows.mp4)
+range=$(check -H "Range: bytes=0-1023" https://podvorye.com/assets/video/hero-rows.mp4)
 echo "  видео (ожидается 206): $range"
 
 if [ "$code" != "200" ] || [ "$range" != "206" ]; then
