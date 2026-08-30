@@ -89,13 +89,15 @@ ls /var/www/podvorye.com
 
 ## 4. Конфигурация nginx
 
-```
-scp podvorye.com.nginx.conf root@IP:/etc/nginx/sites-available/podvorye.com
-ssh root@IP
+Конфигов два, и порядок важен. Боевой `podvorye.com.nginx.conf` ссылается на файлы
+сертификата, которых на чистом сервере ещё нет: `nginx -t` на нём упадёт. Поэтому
+сначала ставится временный, по нему certbot подтверждает домен, и только потом —
+боевой.
 
-ln -s /etc/nginx/sites-available/podvorye.com /etc/nginx/sites-enabled/
-nginx -t          # проверка синтаксиса, должно быть "syntax is ok"
-systemctl reload nginx
+```
+cp /var/www/podvorye.com/deploy/podvorye.com.bootstrap.nginx.conf    /etc/nginx/sites-available/podvorye.com
+ln -sfn /etc/nginx/sites-available/podvorye.com /etc/nginx/sites-enabled/podvorye.com
+nginx -t && systemctl reload nginx
 ```
 
 Если `nginx -t` ругается — не перезагружать, сначала разобраться: перезагрузка
@@ -110,12 +112,28 @@ apt install certbot python3-certbot-nginx      # если ещё не стоит
 certbot --nginx -d podvorye.com -d www.podvorye.com
 ```
 
-Certbot сам допишет блок `443` и настроит переадресацию с http. Продление
-происходит автоматически, проверить можно так:
+Сертификат выпущен. Теперь на место временного конфига кладётся боевой — в нём
+https, переадресация `www` → без www (канон один, дублей в поиске нет) и правила
+кеша с видео. Certbot к этому моменту уже успел дописать своё во временный конфиг;
+его правки боевой заменяет целиком, пути к сертификату в нём те же самые.
+
+```
+cp /etc/nginx/sites-available/podvorye.com /root/podvorye.com.nginx.bak
+cp /var/www/podvorye.com/deploy/podvorye.com.nginx.conf    /etc/nginx/sites-available/podvorye.com
+nginx -t && systemctl reload nginx
+```
+
+Если `nginx -t` ругнётся — вернуть бэкап и разбираться:
+`cp /root/podvorye.com.nginx.bak /etc/nginx/sites-available/podvorye.com`
+
+Продление происходит автоматически, проверить можно так:
 
 ```
 certbot renew --dry-run
 ```
+
+Продлению боевой конфиг не мешает: проверка ходит по http в
+`/.well-known/acme-challenge/`, и этот путь в нём оставлен открытым.
 
 ---
 
