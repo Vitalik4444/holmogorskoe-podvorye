@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Ярмарка выходного дня в Холмогоровке — Холмогорское подворье</title>
+<title>Холмогорское подворье — ярмарка выходного дня в Холмогоровке</title>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="description" content="Ярмарка выходного дня по субботам, воскресеньям и в праздничные дни, с 10:00 до 17:00. Мясо, рыба, сыры, мёд, орехи и овощи от местных хозяйств. пос. Холмогоровка, пер. Садовый, 21. Бесплатная парковка на территории комплекса.">
 <link rel="icon" href="assets/logo/web/mark.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Mathison-Regular.woff2">
@@ -14,18 +15,23 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/social/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/social/apple-touch-icon.png">
 
+<meta name="geo.region" content="RU-KGD">
+<meta name="geo.placename" content="посёлок Холмогоровка, Калининградская область">
+<meta name="geo.position" content="54.783971;20.414005">
+<meta name="ICBM" content="54.783971, 20.414005">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Холмогорское подворье">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://podvorye.com/">
-<meta property="og:title" content="Ярмарка выходного дня в Холмогоровке">
+<meta property="og:title" content="Холмогорское подворье — ярмарка выходного дня">
 <meta property="og:description" content="По субботам, воскресеньям и в праздничные дни, 10:00—17:00. Мясо, рыба, сыры, мёд, орехи и овощи от местных хозяйств.">
 <meta property="og:image" content="https://podvorye.com/assets/social/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Уличные резные ряды Холмогорского подворья">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ярмарка выходного дня в Холмогоровке">
+<meta name="twitter:title" content="Холмогорское подворье — ярмарка выходного дня">
 <meta name="twitter:description" content="По субботам, воскресеньям и в праздничные дни, 10:00—17:00.">
 <meta name="twitter:image" content="https://podvorye.com/assets/social/og.jpg">
 
@@ -625,12 +631,19 @@
     {
       "@type": ["LocalBusiness", "GroceryStore"],
       "@id": "https://podvorye.com/#market",
-      "name": "Ярмарка выходного дня «Холмогорское подворье»",
+      "name": "Холмогорское подворье",
+      "alternateName": "Ярмарка выходного дня «Холмогорское подворье»",
+      "description": "Фермерская ярмарка выходного дня в посёлке Холмогоровка Калининградской области: уличные резные ряды и крытый амбар, 53 торговых места, продукты от местных хозяйств.",
       "url": "https://podvorye.com/",
-      "image": "https://podvorye.com/assets/social/og.jpg",
+      "logo": "https://podvorye.com/assets/logo/web/logo-full.png",
+      "image": ["https://podvorye.com/assets/social/og.jpg"],
       "telephone": "+7 900 561-10-81",
       "email": "holmogorskoye@podvorye.com",
       "priceRange": "$$",
+      "currenciesAccepted": "RUB",
+      "paymentAccepted": "Наличные, банковские карты",
+      "isAccessibleForFree": true,
+      "publicAccess": true,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "переулок Садовый, 21",
@@ -639,12 +652,22 @@
         "postalCode": "238553",
         "addressCountry": "RU"
       },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Калининградская область" },
       "geo": { "@type": "GeoCoordinates", "latitude": 54.783971, "longitude": 20.414005 },
+      "hasMap": "https://yandex.ru/maps/10857/kaliningrad-oblast/house/sadovy_pereulok_21/ZkkYcgZiT0QBQFtufXt5dXhmZg==/",
       "openingHoursSpecification": [
         { "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Saturday", "Sunday"],
           "opens": "10:00", "closes": "17:00" }
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://podvorye.com/#website",
+      "url": "https://podvorye.com/",
+      "name": "Холмогорское подворье",
+      "inLanguage": "ru-RU",
+      "publisher": { "@id": "https://podvorye.com/#market" }
     }
   ]
 }
