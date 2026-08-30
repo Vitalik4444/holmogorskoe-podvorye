@@ -1,0 +1,15 @@
+# Проверка новых коммитов каждые 5 минут. Опрос, а не вебхук: серверу не нужен
+# открытый наружу порт, а GitHub — доступ внутрь. git fetch без изменений стоит
+# доли секунды, при отсутствии коммитов скрипт сразу выходит и nginx не трогает.
+[Unit]
+Description=Проверка обновлений сайта podvorye.com каждые 5 минут
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+# Разброс в полминуты, чтобы запуски не били в GitHub ровно по расписанию.
+RandomizedDelaySec=30s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

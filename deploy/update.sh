@@ -4,8 +4,15 @@
 #
 # Сайт статический, пересобирать на сервере нечего: git pull забирает
 # уже готовые файлы. Скрипт нужен, чтобы не забыть про права и проверку nginx.
+#
+# С флагом --auto (так его дёргает таймер podvorye-update.timer) скрипт
+# при отсутствии новых коммитов сразу выходит: перезагружать nginx и дёргать
+# сайт проверками каждые пять минут впустую незачем.
 
 set -euo pipefail
+
+AUTO=0
+if [ "${1:-}" = "--auto" ]; then AUTO=1; fi
 
 SITE_DIR="/var/www/podvorye.com"
 cd "$SITE_DIR"
@@ -18,6 +25,7 @@ AFTER=$(git rev-parse --short HEAD)
 
 if [ "$BEFORE" = "$AFTER" ]; then
   echo "  изменений нет ($AFTER)"
+  if [ "$AUTO" = "1" ]; then exit 0; fi
 else
   echo "  $BEFORE → $AFTER"
   git --no-pager log --oneline "$BEFORE..$AFTER" | sed 's/^/    /'

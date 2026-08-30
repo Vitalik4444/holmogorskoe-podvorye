@@ -1,0 +1,13 @@
+# Разовый запуск обновления сайта. Сам по себе не активируется — его дёргает
+# podvorye-update.timer. Смотреть историю:  journalctl -u podvorye-update
+[Unit]
+Description=Обновление сайта podvorye.com из репозитория
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env bash /var/www/podvorye.com/deploy/update.sh --auto
+# Сеть или GitHub могут моргнуть — одна неудачная попытка не повод шуметь,
+# следующая пройдёт через пять минут.
+SuccessExitStatus=0
